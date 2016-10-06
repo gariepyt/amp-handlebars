@@ -1,0 +1,13 @@
+<header class="header fixed" >
+	<a href="/"><amp-img src="public/images/logo.gif" alt="Logo" height="60" width="60" class="icon"></amp-img></a>
+	<button on="tap:sidebar.toggle" class="menuIcon">{{!-- <amp-img src="public/images/hamburger.png" alt="Welcome" height="40" width="40"></amp-img> --}}</button>
+</header>
+<amp-sidebar id='sidebar' layout="nodisplay" side="right">
+    <button on="tap:sidebar.close" class="menuIcon menuClose">{{!-- <amp-img src="public/images/hamburger.png" alt="Welcome" height="40" width="40"></amp-img> --}}</button>
+    <ul>
+    	{{#each menuList}}
+    		<li><a href="{{url}}">{{name}}</a></li>
+    	{{/each}}
+    	<li><a href="/not-a-page">Not a Page</a></li>
+    </ul>
+</amp-sidebar>

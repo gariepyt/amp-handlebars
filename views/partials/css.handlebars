@@ -1,0 +1,126 @@
+<style amp-custom>
+	/* Any custom style goes here */
+	body {
+		background-color: white;
+		font-family: 'Open Sans', sans-serif;
+		padding-top: 120px;
+	}
+	header {
+		background: linear-gradient(lightgray, gray);
+		-webkit-transform: translateY(0%);
+		transform: translateY(0%);
+		-webkit-transition: all .4s ease;
+		transition: all .4s ease;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 8;
+	}
+	.icon {
+		margin: 10px;
+	}
+	.menuIcon {
+		float: right;
+		border: 0;
+		padding: 0;
+		width: 30px;
+		height: 30px;
+		background-color: inherit;
+		/*margin: 15px;*/
+		margin: 27.5px;
+		background-image: url('public/images/hamburger.png');
+		background-size: 30px 30px;
+	}
+	.menuClose {
+		margin-right: 17.5px;
+	}
+	.menuNav {
+		display: none;
+		/*transition: all 1s;*/
+	}
+	.menuNav:target {
+		display: block;
+	}
+	p {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	amp-sidebar {
+		width: 250px;
+		padding-right: 10px;
+		z-index: 9;
+    }
+    .amp-sidebar-image {
+		line-height: 100px;
+		vertical-align:middle;
+    }
+    .amp-close-image {
+		top: 15px;
+		left: 225px;
+		cursor: pointer;
+    }
+    li {
+		margin-bottom: 20px;
+		list-style: none;
+    }
+    button {
+		margin-left: 20px;
+    }
+    a {
+    	color: gray;
+    	text-decoration: none;
+    }
+    a:visited {
+    	color: gray;
+    }
+    ul {
+    	margin-top: 85px;
+    }
+    .exit-menu {
+    	float: right; 
+    	margin: 10px;
+    }
+
+    /* Forms */
+    form.amp-form-submit-success [submit-success],
+    form.amp-form-submit-error [submit-error]{
+      margin-top: 16px;
+    }
+    form.amp-form-submit-success [submit-success] {
+      color: green;
+    }
+    form.amp-form-submit-error [submit-error] {
+      color: red;
+    }
+    form.amp-form-submit-success.hide-inputs > input {
+      display: none
+    }
+    .horizontal-display {
+      display: flex;
+      align-items: center;
+    }
+    .other-input {
+      margin: 0 16px;
+    }
+    input:not([type="submit"]) {
+    	padding: 2%;
+    	margin: 10px 5%;
+    	width: 84%;
+    	font-size: 14px;
+    	border-top: none;
+    	border-right: none;
+    	border-bottom: 1px solid gray;
+    	border-left: none;
+    }
+    input[type="submit"] {
+    	margin: 10px auto;
+    	background-color: lightblue;
+    	font-size: 18px;
+    	border: none;
+    	padding: 10px;
+    }
+    input[type="submit"]:active {
+    	background-color: lightgray;
+    }
+</style>

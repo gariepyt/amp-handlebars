@@ -1,0 +1,68 @@
+[
+	{
+		"fileName": "home", 
+		"title": "Welcome to an Amp Site", 
+		"pageURL": "/", 
+		"pageHeader": "The Main Page", 
+		"pageName": "home",
+		"viewable": true
+	},
+	{
+		"fileName": "content", 
+		"title": "This is another page", 
+		"pageURL": "/another-page", 
+		"pageHeader": "Another Page",
+		"pageDetails": "I like stuff!", 
+		"pageName": "Another Page",
+		"viewable": true
+	},
+	{
+		"fileName": "content", 
+		"title": "This is another page (Using the same as before!)", 
+		"pageURL": "/yet-another-page", 
+		"pageHeader": "Yet Another Page",
+		"pageDetails": "This one is using the same template as before!", 
+		"pageName": "Yet Another Page",
+		"viewable": true
+	},
+	{
+		"fileName": "video", 
+		"title": "Watch a Video", 
+		"pageURL": "/video", 
+		"pageHeader": "Watch a Video", 
+		"pageName": "Video",
+		"viewable": true
+	},
+	{
+		"fileName": "form", 
+		"title": "Fill Out a Form", 
+		"pageURL": "/form", 
+		"pageHeader": "The Form Page", 
+		"pageName": "Form",
+		"viewable": true
+	},
+	{
+		"fileName": "form-finished", 
+		"title": "Your Form is Finished!", 
+		"pageURL": "/success", 
+		"pageHeader": "Success!", 
+		"pageDetails": "Congrats.",
+		"viewable": false
+	},
+	{
+		"fileName": "form-finished", 
+		"title": "Your Form is Finished!", 
+		"pageURL": "/failure", 
+		"pageHeader": "Failure!", 
+		"pageDetails": "All your base are belong to us.",
+		"viewable": false
+	},
+	{
+		"fileName": "404", 
+		"title": "404 - File Not Found", 
+		"pageURL": "/404", 
+		"pageHeader": "404 - File Not Found", 
+		"pageName": "404",
+		"viewable": false
+	}
+]
