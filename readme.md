@@ -1,4 +1,4 @@
-#Testing a Dynamic Web Page with AMP and Express-Handlebars
+# `Testing a Dynamic Web Page with AMP and Express-Handlebars`
 
 Things to do:
 * Video page for amp-media
