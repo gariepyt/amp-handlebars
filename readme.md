@@ -11,10 +11,15 @@ Installation and Running:
 
 
 Things to do:
-* Video page for amp-media
-* Video combo page
+* Attach Google Analytics
 
 Current notes:
+* There is a sidebar that we can use for a menu
+* CMS data can be pulled onto the page using Express http
+* Forms can exist, but is a bit funky
 * CSS has a size limit (50,000 bytes)
 * Amp-iframe must be at least 75% down the page or below the fold
 * No similar issues with amp-video
+* Amp-Anaytics for using Google Analytics
+
+Backend Needs:

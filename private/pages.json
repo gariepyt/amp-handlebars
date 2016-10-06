@@ -42,6 +42,14 @@
 		"viewable": true
 	},
 	{
+		"fileName": "videos", 
+		"title": "Watch a Video AND a YouTube Video", 
+		"pageURL": "/videos", 
+		"pageHeader": "Watch 2 Videos!", 
+		"pageName": "Videos",
+		"viewable": true
+	},
+	{
 		"fileName": "form", 
 		"title": "Fill Out a Form", 
 		"pageURL": "/form", 
