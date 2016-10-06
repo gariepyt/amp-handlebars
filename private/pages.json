@@ -34,6 +34,14 @@
 		"viewable": true
 	},
 	{
+		"fileName": "youtube-video", 
+		"title": "Watch a YouTube Video", 
+		"pageURL": "/youtube-video", 
+		"pageHeader": "Watch a YouTube Video", 
+		"pageName": "YouTube Video",
+		"viewable": true
+	},
+	{
 		"fileName": "form", 
 		"title": "Fill Out a Form", 
 		"pageURL": "/form", 

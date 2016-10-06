@@ -6,10 +6,6 @@ var fs = require('fs');
 
 var app = express();
 
-// var app = express();
-
-// app.use(express.bodyParser());
-
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
