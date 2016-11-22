@@ -1,6 +1,6 @@
 {
   "name": "amp-handlebars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Testing to see if you can create Amp with handlebars in order to make it dynamic",
   "main": "ampHand.js",
   "scripts": {

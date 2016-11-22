@@ -1,5 +1,8 @@
+/* Main Requirements */
 var express = require("express");
 var handlebars = require("express-handlebars");
+
+/* Additional Features */
 var bodyParser = require('body-parser');
 var http = require('http');
 var fs = require('fs');
@@ -66,6 +69,12 @@ function buildData(num) {
 	return data;
 }
 
+app.get('', function(req, res){
+	var data = buildData(0);
+
+	res.render(data.fileName, data);
+});
+
 app.get('/', function(req, res){
 	var data = buildData(0);
 
@@ -75,7 +84,7 @@ app.get('/', function(req, res){
 app.get('/verify-form', function(req, res){
 	var data = {response: null};
 
-	console.log("/verify got: " + req.query.name)
+	console.log("/verify got: " + req.query.name);
 
 	if (req.query.name == "error") {
 		data.response = "failure";
