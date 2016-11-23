@@ -27,6 +27,7 @@ app.engine('handlebars', handlebars({
 	]
 }));
 
+/* Set Express */
 app.set('view engine', 'handlebars' );
 app.set('port', 3000);
 
@@ -44,14 +45,6 @@ function getData(){
 		});
 	});
 }
-
-app.get('/get-pages', function(req, res){
-	var pageData = JSON.parse(fs.readFileSync(__dirname + "/private/pages.json", 'utf8'));
-	res.send(JSON.stringify(pageData));
-});
-
-app.use('/public', express.static(__dirname + '/public'));
-
 function buildData(num) {
 	getData();
 	var data = Object.assign({}, pageInfo[num]);
@@ -69,6 +62,20 @@ function buildData(num) {
 	return data;
 }
 
+/* To be run before routing */
+app.use(function(req, res, next) {
+	// var data = buildData(0);
+
+	console.log("This function was run");
+	
+	next();
+});
+
+/* For all static content */
+app.use('/public', express.static(__dirname + '/public'));
+
+
+/* Routing */
 app.get('', function(req, res){
 	var data = buildData(0);
 
@@ -81,19 +88,9 @@ app.get('/', function(req, res){
 	res.render(data.fileName, data);
 });
 
-app.get('/verify-form', function(req, res){
-	var data = {response: null};
-
-	console.log("/verify got: " + req.query.name);
-
-	if (req.query.name == "error") {
-		data.response = "failure";
-		res.send(JSON.stringify(data));
-	}
-	else {
-		data.response = "success";
-		res.send(JSON.stringify(data));
-	}
+app.get('/get-pages', function(req, res){
+	var pageData = JSON.parse(fs.readFileSync(__dirname + "/private/pages.json", 'utf8'));
+	res.send(JSON.stringify(pageData));
 });
 
 app.post('/submit-form', function(req, res){
@@ -125,6 +122,21 @@ app.post('/submit-form', function(req, res){
 			}
 		});
 	});
+});
+
+app.get('/verify-form', function(req, res){
+	var data = {response: null};
+
+	console.log("/verify got: " + req.query.name);
+
+	if (req.query.name == "error") {
+		data.response = "failure";
+		res.send(JSON.stringify(data));
+	}
+	else {
+		data.response = "success";
+		res.send(JSON.stringify(data));
+	}
 });
 
 app.get('/:pageName', function(req, res){
