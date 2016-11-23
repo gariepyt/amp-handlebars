@@ -13,6 +13,9 @@ Installation and Running:
 Things to do:
 * Attach Google Analytics
 
+Current Build Issues:
+* Breaks the first time the server tries to load the site, but works after that
+
 Current notes:
 * There is a sidebar that we can use for a menu
 * CMS data can be pulled onto the page using Express http
@@ -22,4 +25,6 @@ Current notes:
 * No similar issues with amp-video
 * Amp-Anaytics for using Google Analytics
 
-Backend Needs:
+Server Needs:
+* Node server
+* Redirect to mobile site when on mobile devices

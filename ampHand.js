@@ -62,17 +62,25 @@ function buildData(num) {
 	return data;
 }
 
+/* For all static content */
+app.use('/public', express.static(__dirname + '/public'));
+
+
+/* API */
+app.get('/get-pages', function(req, res){
+	var pageData = JSON.parse(fs.readFileSync(__dirname + "/private/pages.json", 'utf8'));
+	res.send(JSON.stringify(pageData));
+});
+
+
 /* To be run before routing */
 app.use(function(req, res, next) {
-	// var data = buildData(0);
+	var data = buildData(0);
 
 	console.log("This function was run");
 	
 	next();
 });
-
-/* For all static content */
-app.use('/public', express.static(__dirname + '/public'));
 
 
 /* Routing */
@@ -86,11 +94,6 @@ app.get('/', function(req, res){
 	var data = buildData(0);
 
 	res.render(data.fileName, data);
-});
-
-app.get('/get-pages', function(req, res){
-	var pageData = JSON.parse(fs.readFileSync(__dirname + "/private/pages.json", 'utf8'));
-	res.send(JSON.stringify(pageData));
 });
 
 app.post('/submit-form', function(req, res){
