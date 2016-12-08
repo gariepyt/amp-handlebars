@@ -12,7 +12,7 @@ var app = express();
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-var pageInfo = [];
+// var pageInfo = [];
 
 var options = {
 	host: 'localhost',
@@ -32,21 +32,8 @@ app.set('view engine', 'handlebars' );
 app.set('port', 3000);
 
 /* Get page info */
-function getData(){
-	http.get("http://localhost:3000/get-pages", function(res) {
-		var body = '';
-
-		res.on('data', function(chunk){
-			body += chunk;
-		});
-
-		res.on('end', function() {
-			pageInfo = JSON.parse(body);
-		});
-	});
-}
-function buildData(num) {
-	getData();
+function buildData(num, pageInfo) {
+	// getData();
 	var data = Object.assign({}, pageInfo[num]);
 	data.menuList = [];
 	for (var x = 0; x < pageInfo.length; x++) {
@@ -75,23 +62,36 @@ app.get('/get-pages', function(req, res){
 
 /* To be run before routing */
 app.use(function(req, res, next) {
-	var data = buildData(0);
+	// var data = buildData(0);
 
 	console.log("This function was run");
 	
-	next();
+	// next();
+
+	http.get("http://localhost:3000/get-pages", function(res) {
+		var body = '';
+
+		res.on('data', function(chunk){
+			body += chunk;
+		});
+
+		res.on('end', function() {
+			req.pageInfo = JSON.parse(body);
+			next();
+		});
+	});
 });
 
 
 /* Routing */
 app.get('', function(req, res){
-	var data = buildData(0);
+	var data = buildData(0, req.pageInfo);
 
 	res.render(data.fileName, data);
 });
 
 app.get('/', function(req, res){
-	var data = buildData(0);
+	var data = buildData(0, req.pageInfo);
 
 	res.render(data.fileName, data);
 });
@@ -101,7 +101,7 @@ app.post('/submit-form', function(req, res){
 
 	console.log(req.body);
 
-	console.log("This function was run");
+	// console.log("This function was run");
 
 	http.get("http://localhost:3000/verify-form?name=" + req.body.name, function(resp) {
 		var body = '';
@@ -145,15 +145,15 @@ app.get('/verify-form', function(req, res){
 app.get('/:pageName', function(req, res){
 	var index = -1;
 
-	for (var x = 0; x < pageInfo.length; x++) {	
-		if ('/' + req.params.pageName == pageInfo[x].pageURL) {
+	for (var x = 0; x < req.pageInfo.length; x++) {	
+		if ('/' + req.params.pageName == req.pageInfo[x].pageURL) {
 			index = x;
 			break;
 		}
 	}
 	
 	if (index != -1) {
-		var data = buildData(index);
+		var data = buildData(index, req.pageInfo);
 
 		res.render(data.fileName, data);
 	}
@@ -163,8 +163,8 @@ app.get('/:pageName', function(req, res){
 });
 
 app.get('/404', function(req, res){
-	index = pageInfo.length - 1;
-	var data = buildData(index);
+	index = req.pageInfo.length - 1;
+	var data = buildData(index, req.pageInfo);
 
 	res.render(data.fileName, data);
 });
