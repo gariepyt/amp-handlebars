@@ -1,20 +1,17 @@
-# `Testing a Dynamic Web Page with AMP and Express-Handlebars`
+# Testing a Dynamic Web Page with AMP and Express-Handlebars
 
-This project was created in order to see if it's possible to build a dynamic Amp website using Express-Handlebars
+This project was created in order to see if it's possible to build a dynamic Amp website using Express-Handlebars. This demo shows how to build AMP pages with page data stored in a CMS (or in this case, a JSON file).
 
-NOTE: in order to run this project, node and npm must be installed.
+NOTE: in order to run this project, node, npm, and the grunt cli must be installed.
 
 Installation and Running:
-1. npm install
-2. node ampHand.js
-3. view the project in your browser by going to localhost:3000
+1. npm i
+2. npm start
+3. the site will open in your default browser
 
 
 Things to do:
 * Attach Google Analytics
-
-Current Build Issues:
-* Breaks the first time the server tries to load the site, but works after that
 
 Current notes:
 * There is a sidebar that we can use for a menu

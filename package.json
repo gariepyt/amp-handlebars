@@ -1,36 +1,37 @@
 {
-  "name": "amp-handlebars",
-  "version": "1.0.1",
-  "description": "Testing to see if you can create Amp with handlebars in order to make it dynamic",
-  "main": "ampHand.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "amp",
-    "handlebars",
-    "test",
-    "Snap"
-  ],
-  "author": "tgariepy <tgariepy@snapfinance.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gariepyt/amp-handlebars.git"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "node-handlebars": "^0.9.7"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-express-server": "^0.5.3",
-    "grunt-open": "^0.2.3",
-    "load-grunt-tasks": "^3.5.2",
-    "time-grunt": "^1.4.0"
-  }
+	"name": "amp-handlebars",
+	"version": "1.0.1",
+	"description": "Testing to see if you can create Amp with handlebars in order to make it dynamic",
+	"main": "ampHand.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "grunt serve"
+	},
+	"keywords": [
+		"amp",
+		"handlebars",
+		"test",
+		"Snap"
+	],
+	"author": "tgariepy <tgariepy@snapfinance.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gariepyt/amp-handlebars.git"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.15.2",
+		"express": "^4.14.0",
+		"express-handlebars": "^3.0.0",
+		"node-handlebars": "^0.9.7"
+	},
+	"devDependencies": {
+		"grunt": "^1.0.1",
+		"grunt-cli": "^1.2.0",
+		"grunt-contrib-watch": "^1.0.0",
+		"grunt-express-server": "^0.5.3",
+		"grunt-open": "^0.2.3",
+		"load-grunt-tasks": "^3.5.2",
+		"time-grunt": "^1.4.0"
+	}
 }
